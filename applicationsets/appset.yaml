@@ -1,29 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: my-apps
+  name: my-appset-app
+  namespace: argocd
 spec:
   generators:
-  - git:
-      repoURL: https://github.com/bekzatbaubek/argocd-apps.git
-      revision: main
-      directories:
-      - path: "apps/**/config.json"
+  - list:
+      elements:
+      - app: nginx
+        ns: nginx-ns
+        url: https://kubernetes.default.svc
   template:
     metadata:
-      name: '{{app.id}}'
+      name: '{{cluster}}-test'
     spec:
-      project: default
+      project: "default"
       source:
         repoURL: https://github.com/bekzatbaubek/argocd-apps.git
         targetRevision: main
-        path: 'apps/{{app.id}}'
-        helm:
-          valueFiles:
-            - values.{{app.id}}.yaml
+        path: apps/{{app}}
       destination:
-        server: '{{k8s_cluster.address}}'
-        namespace: '{{k8s_cluster.namespace}}'
-      syncPolicy:
-        syncOptions:
-          - CreateNamespace=true
+        server: '{{url}}'
+        namespace: '{{ns}}'
