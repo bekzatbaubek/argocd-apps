@@ -23,6 +23,9 @@ spec:
           selfHeal: true
         syncOptions:
         - CreateNamespace=true
+        helm:
+          valueFiles:
+            - values.yaml
       source:
         repoURL: https://github.com/bekzatbaubek/argocd-apps.git
         targetRevision: main
