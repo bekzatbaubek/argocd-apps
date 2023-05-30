@@ -1,4 +1,8 @@
+apiVersion: v2
+appVersion: 0.1
+name: redis-cluster
+description: Chart to fetch Redis(r) cluster
 dependencies:
-  - name: "redis-cluster"
-    version: "8.6.2"
-    repository: "oci://registry-1.docker.io/bitnamicharts"
+  - name: redis-cluster
+    repository: oci://registry-1.docker.io/bitnamicharts
+    version: 8.6.2
