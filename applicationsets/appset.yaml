@@ -23,4 +23,4 @@ spec:
         namespace: '{{k8s_cluster.namespace}}'
       syncPolicy:
         syncOptions:
-          -CreateNamespace=true
+          - CreateNamespace=true
