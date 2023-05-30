@@ -1,0 +1,9 @@
+{
+    "app": {
+      "id": "nginx"
+    },
+    "k8s_cluster": {
+      "address": "https://kubernetes.default.svc",
+      "namespace": "ns-one"
+    }
+  }

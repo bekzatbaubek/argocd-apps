@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: my-apps
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/bekzatbaubek/argocd-apps.git
+      revision: main
+      directories:
+      - path: "apps/**/config.json"
+  template:
+    metadata:
+      name: '{{app.id}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/bekzatbaubek/argocd-apps.git
+        targetRevision: main
+        path: 'apps/{{app.id}}'
+      destination:
+        server: '{{k8s_cluster.address}}'
+        namespace: '{{k8s_cluster.namespace}}'
+      syncPolicy:
+        - CreateNamespace=true

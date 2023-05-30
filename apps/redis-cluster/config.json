@@ -1,0 +1,9 @@
+{
+    "app": {
+      "id": "redis-cluster"
+    },
+    "k8s_cluster": {
+      "address": "https://kubernetes.default.svc",
+      "namespace": "ns-two"
+    }
+  }
