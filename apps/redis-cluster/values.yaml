@@ -1,5 +1,2 @@
 global:
   storageClass: "standard"
-
-persistence:
-  path: /data/bitnami/redis/data
