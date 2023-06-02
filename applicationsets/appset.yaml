@@ -21,18 +21,18 @@ spec:
       name: '{{app}}-test'
     spec:
       project: "default"
-      syncPolicy:
-        automated:
-          selfHeal: true
-        syncOptions:
-        - CreateNamespace=true
       source:
         repoURL: https://github.com/bekzatbaubek/argocd-apps.git
         targetRevision: main
         path: apps/{{app}}
         helm:
           valueFiles:
-            - values.yaml
+          - values.yaml
       destination:
         server: '{{url}}'
         namespace: '{{ns}}'
+      syncPolicy:
+        automated:
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
