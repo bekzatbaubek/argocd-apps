@@ -16,3 +16,4 @@ spec:
       - name: my-app
         image: alpine
         command: ["/bin/sh"]
+        args: ["-c", "while true; do echo hello; sleep 10;done"]
