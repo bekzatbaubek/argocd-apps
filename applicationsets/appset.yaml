@@ -10,7 +10,7 @@ spec:
       - app: nginx
         ns: nginx-ns
         url: https://kubernetes.default.svc
-      - app: nginx
+      - app: prometheus
         ns: prometheus-ns
         url: https://kubernetes.default.svc
   template:
