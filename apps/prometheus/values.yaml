@@ -78,6 +78,7 @@ ingress:
 ##
 alertmanager:
   enabled: true
+
   image:
     registry: docker.io
     repository: bitnami/alertmanager
@@ -932,7 +933,7 @@ server:
   thanos:
     ## @param server.thanos.create Create a Thanos sidecar container
     ##
-    create: false
+    create: true
     ## Bitnami Thanos image
     ## ref: https://hub.docker.com/r/bitnami/thanos/tags/
     ## @param server.thanos.image.registry Thanos image registry
