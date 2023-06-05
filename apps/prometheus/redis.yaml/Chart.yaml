@@ -1,0 +1,7 @@
+apiVersion: v2
+version: 0.1
+name: redis-cluster
+dependencies:
+- name: redis-cluster
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 7.0.11
