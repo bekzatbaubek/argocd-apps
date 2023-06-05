@@ -8,7 +8,7 @@ spec:
       repoURL: https://github.com/bekzatbaubek/argocd-apps.git
       revision: HEAD
       directories:
-      - path: examples/git-generator-directory/cluster-addons/*
+      - path: apps/*
   template:
     metadata:
       name: '{{path[0]}}'
