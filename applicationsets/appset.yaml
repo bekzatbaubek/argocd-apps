@@ -5,11 +5,11 @@ metadata:
   namespace: argocd
 spec:
   generators:
-    - git:
-      repoURL: https://github.com/bekzatbaubek/argocd-apps.git
-      revision: HEAD
-      directories:
-      - path: apps/*
+  - git:
+    repoURL: https://github.com/bekzatbaubek/argocd-apps.git
+    revision: HEAD
+    directories:
+    - path: apps/*
   template:
     metadata:
       name: '{{path.basename}}'
