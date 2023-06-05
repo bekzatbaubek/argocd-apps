@@ -8,7 +8,7 @@ spec:
       repoURL: https://github.com/bekzatbaubek/argocd-apps.git
       revision: HEAD
       directories:
-      - path: apps/**
+      - path: apps/*
   template:
     metadata:
       name: '{{path.basename}}'
@@ -21,3 +21,6 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{path.basename}}'
+      syncPolicy:
+        automated:
+          selfHeal: true
