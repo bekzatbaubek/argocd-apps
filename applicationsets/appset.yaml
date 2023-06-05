@@ -23,7 +23,7 @@ spec:
         path: '{{path}}'
         helm:
           valueFiles:
-            - values-dev.yaml
+            - 'values-dev.yaml'
           ignoreMissingValueFiles: true
       destination:
         server: https://kubernetes.default.svc
