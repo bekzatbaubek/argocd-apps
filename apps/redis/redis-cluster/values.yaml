@@ -482,7 +482,8 @@ redis-cluster:
     ## @param redis.configmap Additional Redis&reg; configuration for the nodes
     ## ref: https://redis.io/topics/config
     ##
-    configmap: ""
+    configmap: |
+      maxmemory 100mb
     ## @param redis.extraEnvVars An array to add extra environment variables
     ## For example:
     ##  - name: BEARER_AUTH

@@ -1,0 +1,3 @@
+redis-cluster:
+  metrics:
+    enabled: true
